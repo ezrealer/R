@@ -1,0 +1,5 @@
+library(NbClust)
+devAskNewPage(ask=TRUE)
+nc <- NbClust(nutrient.scaled, distance="euclidean",min.nc=2, max.nc=15, method="average")
+table(nc$Best.n[1,])
+barplot(table(nc$Best.n[1,]),xlab="Numer of Clusters", ylab="Number of Criteria",main="Number of Clusters Chosen by 26 Criteria")
